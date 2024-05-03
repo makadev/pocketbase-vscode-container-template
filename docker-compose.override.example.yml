@@ -1,0 +1,7 @@
+services:
+  server:
+    environment:
+      - PB_ENCRYPTION_KEY="the quick brown fox jumps over the lazy dog"
+    ports:
+      - "8090:8090"
+    command: ["serve", "--http=0.0.0.0:8090", "--encryptionEnv=PB_ENCRYPTION_KEY"]

@@ -1,0 +1,17 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: pocketbase-custom-server
+    container_name: pocketbase-custom-server
+    restart: unless-stopped
+    ulimits:
+      nofile:
+        soft: 4096
+        hard: 8192
+    volumes:
+      - pb_data:/app/pb_data
+
+volumes:
+  pb_data:
