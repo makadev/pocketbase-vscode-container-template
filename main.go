@@ -130,8 +130,8 @@ func main() {
 func defaultPublicDir() string {
 	if strings.HasPrefix(os.Args[0], os.TempDir()) {
 		// most likely ran with go run
-		return "./public"
+		return "./pb_public"
 	}
 
-	return filepath.Join(os.Args[0], "../public")
+	return filepath.Join(os.Args[0], "../pb_public")
 }
